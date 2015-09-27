@@ -8,6 +8,7 @@ if(!isset($_SESSION['islogin'])){
     $password = $_POST['password'];
     
     $query = mysql_query("select username,password,name_level from user,level where user.level=level.id_level and username='$username' and password='$password'");
+                                                                                                                            
       $cek = mysql_num_rows($query);
       $data = mysql_fetch_array($query);
       if($cek>=1){
@@ -23,7 +24,8 @@ if(!isset($_SESSION['islogin'])){
 
       }else{
         echo"User is not Registeresd";
-      }  
+      }
+        
     
   }
 
